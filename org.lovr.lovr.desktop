@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=lovr
+Name=lovr
+Type=Application
+Icon=org.lovr.lovr
+Keywords=lovr;vr;game;engine;lua;
+Categories=Development;Game;

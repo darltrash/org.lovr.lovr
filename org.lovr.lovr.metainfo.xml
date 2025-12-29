@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<component type="desktop-application">
+  <!--Created with jdAppStreamEdit 9.2-->
+  <id>org.lovr.lovr</id>
+  <name>LÖVR</name>
+  <summary>A simple Lua framework for rapidly building VR experiences.</summary>
+  <developer id="org.lovr">
+    <name>LÖVR Developers</name>
+  </developer>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <description>
+    <p>A simple Lua framework for rapidly building VR experiences.</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <caption>LÖVR's "No game" screen.</caption>
+      <image type="source">https://raw.githubusercontent.com/darltrash/org.lovr.lovr/refs/heads/main/screenshot.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>A VR game running on LÖVR</caption>
+      <image type="source">https://camo.githubusercontent.com/3e35aae4f0e3cae5c2aa2623f2abcf38a279767515909b9425975050dbad96a3/687474703a2f2f6c6f76722e6f72672f7374617469632f696d672f73637265656e312e6a7067</image>
+    </screenshot>
+    <screenshot>
+      <caption>A VR game running on LÖVR</caption>
+      <image type="source">https://camo.githubusercontent.com/f1f4b28a84bccd89a2b90bb4b305125b3dd5e227a8efdbc248e1858ad3115e94/687474703a2f2f6c6f76722e6f72672f7374617469632f696d672f73637265656e322e6a7067</image>
+    </screenshot>
+    <screenshot>
+      <caption>A VR game running on LÖVR</caption>
+      <image type="source">https://camo.githubusercontent.com/d28494e79cf0c963b96b6e6a8655378e966700a8f8e5938b7a5d46f27427b3ce/687474703a2f2f6c6f76722e6f72672f7374617469632f696d672f73637265656e332e6a7067</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="0.18.0" date="2025-02-14" type="stable"/>
+  </releases>
+  <url type="homepage">https://lovr.org/</url>
+  <url type="bugtracker">https://github.com/bjornbytes/lovr/issues</url>
+  <url type="faq">https://lovr.org/docs/FAQ</url>
+  <url type="help">https://lovr.org/docs</url>
+  <url type="vcs-browser">https://github.com/bjornbytes/lovr</url>
+  <categories>
+    <category>Game</category>
+    <category>Development</category>
+    <category>Utility</category>
+  </categories>
+  <supports>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </supports>
+  <content_rating type="oars-1.1"/>
+  <launchable type="desktop-id">org.lovr.lovr.desktop</launchable>
+  <provides>
+    <binary>lovr</binary>
+    <mediatype>application/x-lovr-game</mediatype>
+  </provides>
+  <keywords>
+    <keyword>lua</keyword>
+  </keywords>
+  <branding>
+    <color type="primary" scheme_preference="light">#654aa9</color>
+    <color type="primary" scheme_preference="dark">#18a6df</color>
+  </branding>
+</component>

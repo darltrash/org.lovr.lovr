@@ -1,0 +1,60 @@
+id: org.lovr.lovr
+runtime: org.freedesktop.Platform
+runtime-version: "25.08"
+sdk: org.freedesktop.Sdk
+
+command: lovr
+
+finish-args:
+  - --socket=x11
+  - --share=ipc
+  - --socket=wayland
+  - --device=dri
+  - --socket=pulseaudio
+  - --share=network
+  - --filesystem=host:ro
+
+cleanup:
+  - /lib/pkgconfig
+  - /share/man
+  - /include
+  - "*.la"
+  - "*.a"
+
+modules:
+  - name: lovr
+    buildsystem: cmake
+    builddir: true
+    no-make-install: true
+
+    post-install:
+      - mkdir -p /app/share/icons/hicolor/scalable/apps
+      - mkdir -p /app/lib
+
+      - cp -v bin/*.so* /app/lib/
+      - install -Dm777 bin/lovr /app/bin/lovr
+
+      - install -Dm644 ../org.lovr.lovr.metainfo.xml /app/share/metainfo/org.lovr.lovr.metainfo.xml
+      - install -Dm644 ../org.lovr.lovr.desktop /app/share/applications/org.lovr.lovr.desktop
+      - install -Dm644 ../org.lovr.lovr.svg /app/share/icons/hicolor/scalable/apps/org.lovr.lovr.svg
+
+    build-options:
+      build-args:
+        - --share=network
+
+    sources:
+      - type: git
+        url: https://github.com/bjornbytes/lovr
+        commit: 5131655bb191cd0e86711366838c3de085575170
+
+      - type: file
+        path: org.lovr.lovr.metainfo.xml
+
+      - type: file
+        path: org.lovr.lovr.svg
+
+      - type: file
+        path: org.lovr.lovr.desktop
+
+    cleanup:
+      - /share/pixmaps
