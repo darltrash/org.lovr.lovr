@@ -29,14 +29,18 @@ modules:
 
     post-install:
       - mkdir -p /app/share/icons/hicolor/scalable/apps
-      - mkdir -p /app/lib
 
+      - mkdir -p /app/lib
       - cp -v bin/*.so* /app/lib/
-      - install -Dm777 bin/lovr /app/bin/lovr
+
+      - cd ../etc/nogame && zip -9 ../nogame.zip *
+      - install -Dm644 ../etc/nogame.zip /app/etc/lovr-nogame.zip
 
       - install -Dm644 ../org.lovr.lovr.metainfo.xml /app/share/metainfo/org.lovr.lovr.metainfo.xml
       - install -Dm644 ../org.lovr.lovr.desktop /app/share/applications/org.lovr.lovr.desktop
       - install -Dm644 ../org.lovr.lovr.svg /app/share/icons/hicolor/scalable/apps/org.lovr.lovr.svg
+      - install -Dm755 ../lovr-wrapper.sh /app/bin/lovr-wrapper
+      - install -Dm755 bin/lovr /app/bin/lovr
 
     build-options:
       build-args:
@@ -55,6 +59,9 @@ modules:
 
       - type: file
         path: org.lovr.lovr.desktop
+
+      - type: file
+        path: lovr-wrapper.sh
 
     cleanup:
       - /share/pixmaps

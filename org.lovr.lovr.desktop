@@ -1,7 +1,8 @@
 [Desktop Entry]
-Exec=lovr
-Name=lovr
+Exec=lovr-wrapper %F
+Name=LÖVR
 Type=Application
 Icon=org.lovr.lovr
 Keywords=lovr;vr;game;engine;lua;
 Categories=Development;Game;
+MimeType=application/x-lovr-game;application/x-zip;
